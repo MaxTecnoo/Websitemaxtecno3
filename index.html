@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeGpt Website</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #FFFFFF;
+        }
+        video#background-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            background-size: cover;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            overflow: auto; /* Allow scroll for content */
+            max-height: 100vh; /* Limit height to viewport */
+        }
+        .navbar {
+            display: flex;
+            flex-direction: column; /* Changed to column for alignment */
+            align-items: center;
+            background-color: rgba(26, 26, 26, 0.8); /* Make navbar semi-transparent */
+            padding: 20px;
+            border-radius: 10px; /* Added border radius for a softer look */
+            margin-bottom: 20px; /* Add margin for spacing */
+        }
+        .navbar-title {
+            color: #00FF00;
+            font-size: 32px; /* Increased font size for better visibility */
+            font-weight: bold;
+            margin-bottom: 10px; /* Space between title and button */
+        }
+        .navbar a.youtube-btn {
+            color: #FFFFFF;
+            background-color: #FF0000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .navbar a.youtube-btn:hover {
+            transform: scale(1.1);
+            background-color: #AA0000;
+        }
+        #search {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            box-sizing: border-box;
+            margin: 20px 0;
+            animation: rainbow 5s infinite;
+            border: 2px solid transparent;
+            border-radius: 5px;
+        }
+        .download-item {
+            background-color: rgba(26, 26, 26, 0.8); /* Make download item semi-transparent */
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .download-item img {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .download-item .content {
+            flex: 1;
+        }
+        .download-item h2 {
+            color: #00FF00;
+            font-weight: bold;
+            margin: 0;
+        }
+        .download-item .description {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .download-item .description p {
+            color: #FFFFFF;
+            font-weight: bold;
+            background-color: #333333;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .download-item button {
+            background-color: #0000FF;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .download-item button:hover {
+            transform: scale(1.1);
+        }
+        .version-options {
+            display: none;
+            margin-top: 10px;
+        }
+        .version-options button {
+            margin-top: 5px;
+            background-color: #008CBA;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .version-options button:hover {
+            background-color: white; 
+            color: black; 
+            border: 2px solid #008CBA;
+        }
+        /* Floating popup untuk pesan informasi login */
+        .info-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #000;
+            color: #FFD700;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1002;
+            font-weight: bold;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translate(-50%, -150%); opacity: 0; }
+            to { transform: translate(-50%, -50%); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="https://www.dropbox.com/scl/fi/f6i8u573t2w5ypqeghglh/a5a5b81dcac672843366233375537e9a.mp4?rlkey=cnkcbycin1ewdbwte7pkhm2at&st=77vmvdnn&dl=1" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="content">
+        <div class="navbar">
+            <div class="navbar-title">FreeGpt WEBSITE</div>
+            <a class="youtube-btn" href="https://youtube.com/@freeegpt?si=x0pTJTGmOmyVyYys" target="_blank">YouTube</a>
+        </div>
+        <input type="text" id="search" placeholder="Search...">
+
+        <div class="download-item" data-name="GPT-4o MOD">
+            <img src="https://gcdnb.pbrd.co/images/1Noydq7w6PYu.jpg?o=1" alt="GPT-4o MOD Image">
+            <div class="content">
+                <h2>GPT-4o</h2>
+                <div class="description">
+                    <p>GPT REALTIME ✅</p>
+                    <p>GENERATE FOTO ✅</p>
+                    <p>PREMIUM FEATURE ✅</p>
+                    <p>NO LOGIN ✅</p>
+                    <p>UPDATE : YES | V.2</p>
+                </div>
+                <button class="download-btn" type="button" aria-label="Toggle download options for GPT-4o MOD">Download</button>
+                <div class="version-options">
+                    <button type="button" data-link="https://sfl.gl/a1Et">📥DOWNLOAD📥</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const premiumUsers = {
+            "user1@gmail.com": {
+                password: "password1",
+                daysRemaining: 30
+            },
+            "user2@gmail.com": {
+                password: "password2",
+                daysRemaining: 30
+            },
+            "user3@gmail.com": {
+                password: "password3",
+                daysRemaining: 30
+            },
+            "user4@gmail.com": {
+                password: "pass4",
+                daysRemaining: 30
+            },
+            "user5@gmail.com": {
+                password: "password5",
+                daysRemaining: 30
+            }
+        };
+
+        // Load data dari localStorage
+        const savedEmail = localStorage.getItem('premiumEmail');
+        const savedPassword = localStorage.getItem('premiumPassword');
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+        const downloadBtns = document.querySelectorAll('.download-btn');
+        downloadBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                const versionOptions = e.target.nextElementSibling;
+                versionOptions.style.display = versionOptions.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        const versionBtns = document.querySelectorAll('.version-options button');
+        versionBtns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                const link = e.target.getAttribute('data-link');
+                if (e.target.classList.contains('premium-download-btn')) {
+                    const loggedInUserEmail = localStorage.getItem('premiumEmail');
+                    const loggedInUserPassword = localStorage.getItem('premiumPassword');
+                    if (loggedInUserEmail && loggedInUserPassword) {
+                        window.location.href = link;
+                    } else {
+                        alert('Anda belum login atau bukan pengguna premium.');
+                    }
+                } else {
+                    window.location.href = link;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
